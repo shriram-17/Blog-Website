@@ -8,6 +8,7 @@ app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///blog.db'
 
 db =SQLAlchemy(app)
 
+
 class Blogpost(db.Model):
     id = db.Column(db.Integer,primary_key=True)
     title = db.Column(db.String(50))
@@ -50,4 +51,5 @@ def addpost():
     return '<h1>Title:{} Subtitle:{} Author: {} Content: {}</h1>'.format(title, subtitle,author,content)
      
 if __name__ =='__main__':
-    app.run(debug=True)
+    app.debug=True
+    app.run()
